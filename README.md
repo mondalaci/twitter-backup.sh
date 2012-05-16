@@ -1,5 +1,5 @@
-twitter-backup.sh - A Twitter backup utility
-============================================
+twitter-backup.sh is a Twitter backup utility
+=============================================
 
 twitter-backup.sh is a very simple BASH script intended to backup all your tweets.
 
