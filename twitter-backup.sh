@@ -15,9 +15,11 @@ mkdir $backup_dir
 
 page=1
 while true; do
-    dest_file=$backup_dir/$page.xml
-    curl -o $dest_file http://twitter.com/statuses/user_timeline/$username.xml?page=$page
-    page_size=`cat $dest_file|wc -c`
+    url=http://twitter.com/statuses/user_timeline/$username.xml?page=$page
+    dest_file="$backup_dir/$page.xml"
+    echo Saving $url as $dest_file
+    curl -s -o "$dest_file" $url
+    page_size=`cat "$dest_file" | wc -c`
 
     if [ $page_size -lt 1000 ]; then
         break  # We've reached a final, empty page so let's exit from the loop.
