@@ -16,8 +16,8 @@ mkdir $backup_dir
 page=1
 while true; do
     dest_file=$backup_dir/$page.xml
-    wget -nv -O $dest_file http://twitter.com/statuses/user_timeline/$username.xml?page=$page
-    page_size=`stat -c%s $dest_file`
+    curl -o $dest_file http://twitter.com/statuses/user_timeline/$username.xml?page=$page
+    page_size=`cat $dest_file|wc -c`
 
     if [ $page_size -lt 1000 ]; then
         break  # We've reached a final, empty page so let's exit from the loop.
