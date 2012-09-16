@@ -19,6 +19,13 @@ while true; do
     dest_file="$backup_dir/$page.xml"
     echo Saving $url as $dest_file
     curl -s -o "$dest_file" $url
+
+    rate_limit_error=`grep "<error>Rate limit exceeded." "$dest_file"`
+    if [ -n "$rate_limit_error" ]; then
+        echo "$rate_limit_error"
+        exit 1
+    fi
+
     page_size=`cat "$dest_file" | wc -c`
 
     if [ $page_size -lt 1000 ]; then
