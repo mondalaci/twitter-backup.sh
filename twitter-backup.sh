@@ -4,7 +4,7 @@ if [ $# -ne 1 ]; then
     echo "Usage: $0 TWITTER-USERNAME"
     echo "Backup the Twitter account of the specified user."
     echo "twitter-backup.sh 0.1 is released under the GPLv3"
-    echo "Hosted at http://code.google.com/p/twitter-backup-sh/"
+    echo "Hosted at https://github.com/mondalaci/twitter-backup.sh"
     exit 1
 fi
 
