@@ -15,7 +15,7 @@ mkdir $backup_dir
 
 page=1
 while true; do
-    url=http://twitter.com/statuses/user_timeline/$username.xml?page=$page
+    url="http://api.twitter.com/1/statuses/user_timeline.xml?screen_name=${username}&page=${page}&count=200"
     dest_file="$backup_dir/$page.xml"
     echo Saving $url as $dest_file
     curl -s -o "$dest_file" $url
