@@ -1,6 +1,8 @@
 twitter-backup.sh is a Twitter backup utility
 =============================================
 
+**This script doesn't work anymore because of Twitter API changes - use [twitter-backup.py](https://github.com/mondalaci/twitter-backup.py) instead!**
+
 twitter-backup.sh is a very simple BASH script intended to backup all your tweets.
 
 It's so simple that even people with serious brain damage should be able to use it:
